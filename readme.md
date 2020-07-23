@@ -22,6 +22,12 @@ This API uses websocket to make it real time API. This API collect and display t
 localhost:8080/score/
 ```
 
+### SwaggerUI
+For more detailed documentation of all the API, you can visit the swaggerui page available on this webserver
+```
+localhost:8080/swaggerui/
+```
+
 ## How to run
 After cloning this project, you just have to run these line of code to run this project
 ```

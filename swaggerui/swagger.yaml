@@ -1,0 +1,68 @@
+swagger: "2.0"
+info:
+  description: "This is a sample API Webserver for WarungPintar's test. "
+  version: "1.0.0"
+  title: "Simple API webserver"
+tags:
+- name: "API"
+  description: "Every API on this simple webserver"
+- name: "Websocket"
+  description: "Websocket APi for realtime use"
+schemes:
+- "http"
+paths:
+  /:
+    get:
+      tags:
+      - "API"
+      summary: "Home page"
+      description: ""
+      responses:
+        '200':
+          description: "Success"
+          schema:
+            type: "string"
+            example: "Welcome!"
+  /welcome:
+    get:
+      tags:
+      - "API"
+      summary: "Greet user with given name"
+      description: ""
+      parameters:
+      - in: query
+        name: name
+        type: string
+        description: "User name to be greeted"
+        required: true
+      responses:
+        '200':
+          description: "Success"
+          schema:
+            type: "string"
+            example: "Welcome Eph!\nThis is a simple api webserver. Don't hope for too much!\n"
+  /history:
+    get:
+      tags:
+      - "API"
+      summary: "List all API that have already been hit"
+      description: ""
+      responses:
+        "200":
+          description: "Success"
+          schema:
+            type: "string"
+            example: "Welcome 1\nHistory 1"
+  /score/:
+    get:
+      tags:
+      - "Websocket"
+      summary: "Records total Score"
+      description: "Click the Kill button available on the page to add the total score"
+      responses:
+        "200":
+          description: "Success"
+          schema:
+            type: "string"
+            example: "Total Score: \n 1"
+  

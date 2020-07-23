@@ -19,6 +19,11 @@ func main() {
 		Handler(http.StripPrefix(staticDir,
 			http.FileServer(http.Dir("."+staticDir))))
 	r.HandleFunc("/update-score", handler.Score)
+	// swag := http.FileServer(http.Dir("./swaggerui/"))
+	// r.PathPrefix("/swaggerui/").Handler(http.StripPrefix("/swaggerui/", swag))
+	swag := "/swaggerui/"
+	r.PathPrefix(swag).Handler(http.StripPrefix(swag,
+		http.FileServer(http.Dir("."+swag))))
 
 	go handler.HandleMessages()
 
